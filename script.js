@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- IMPORTANT: Update these links ---
     // Replace '#' with the actual URLs to your files/profiles.
-    document.getElementById('resume-link').href = 'https://drive.google.com/file/d/1xItzO-gq-m_GqWONEAb9sLbeFbbtOvGA/view?usp=sharing';
+    const fileId = '1xItzO-gq-m_GqWONEAb9sLbeFbbtOvGA';
+    document.getElementById('resume-link').href =`https://drive.google.com/file/d/${fileId}/preview`;
     document.getElementById('insta-link').href = 'https://www.instagram.com/b1ry4n1_31';
 });
