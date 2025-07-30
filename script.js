@@ -48,6 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- IMPORTANT: Update these links ---
     // Replace '#' with the actual URLs to your files/profiles.
-    document.getElementById('resume-link').href = 'YOUR_RESUME_LINK.pdf';
+    document.getElementById('resume-link').href = 'https://drive.google.com/file/d/1xItzO-gq-m_GqWONEAb9sLbeFbbtOvGA/view?usp=sharing';
     document.getElementById('insta-link').href = 'https://www.instagram.com/b1ry4n1_31';
 });
