@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURATION ---
     const textToType = "Hi! I'm Purushothaman, Computational Biologist and a Digital Artist with a strong passion for Technology and Programming";
@@ -12,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- STATE ---
     let charIndex = 0;
+    let isTyping = true;
+    let typeTimeout;
 
     // --- FUNCTIONS ---
     
@@ -20,29 +21,44 @@ document.addEventListener('DOMContentLoaded', () => {
      * It types one character at a time until the full text is displayed.
      */
     function typeWriter() {
-        if (charIndex < textToType.length) {
+        if (isTyping && charIndex < textToType.length) {
             introTextElement.textContent += textToType.charAt(charIndex);
             charIndex++;
-            setTimeout(typeWriter, typingSpeed);
-        } else {
-            // Typing is complete
-            introTextElement.classList.remove('typing'); // Remove the blinking cursor
-            revealContent();
+            typeTimeout = setTimeout(typeWriter, typingSpeed);
+        } else if (isTyping) {
+            // Typing finished naturally
+            finishAnimation(false); // Finish with a delay
         }
     }
 
     /**
-     * Reveals the profile picture and links with a fade-in effect.
-     * This is called after the typewriter animation is finished.
+     * Finalizes the animation, reveals content, and enables links.
+     * @param {boolean} instant - If true, reveals content immediately. Otherwise, uses a delay.
      */
-    function revealContent() {
+    function finishAnimation(instant = false) {
+        if (!isTyping) return; // Prevent multiple calls
+
+        isTyping = false;
+        clearTimeout(typeTimeout);
+        introTextElement.textContent = textToType;
+        introTextElement.classList.remove('typing');
+
+        const revealDelay = instant ? 0 : delayBeforeLinksAppear;
+
         setTimeout(() => {
             pfpContainer.classList.add('visible');
             linksContainer.classList.add('visible');
-        }, delayBeforeLinksAppear);
+            linksContainer.classList.remove('pointer-events-none'); // Make buttons clickable
+        }, revealDelay);
     }
 
+    // --- EVENT LISTENERS ---
+    
+    // Add a listener to skip the animation on double-click
+    document.addEventListener('dblclick', () => finishAnimation(true));
+
     // --- INITIALIZATION ---
+    
     // Start the typewriter animation when the page loads.
     typeWriter();
 

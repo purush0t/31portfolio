@@ -1,8 +1,11 @@
 
 /* Custom styles for the minimalist dark theme and typewriter effect */
 body {
-    font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
+    font-family: 'Poppins', sans-serif;
     background-color: #0a0a0a; /* A very dark, near-black background */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 #intro-text {
@@ -27,7 +30,7 @@ body {
 /* Fade-in animation for elements that appear after typing */
 .fade-in {
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 .fade-in.visible {
