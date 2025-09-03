@@ -66,5 +66,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Replace '#' with the actual URLs to your files/profiles.
     const fileId = '16b3X5g-fErPN-lXv8mESObj8YeqTctiS';
     document.getElementById('resume-link').href =`https://drive.google.com/file/d/${fileId}/preview`;
-    document.getElementById('insta-link').href = 'https://www.instagram.com/b1ry4n1_31';
+    document.getElementById('insta-link').href = 'https://www.artstation.com/d3nj1';
 });
