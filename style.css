@@ -1,18 +1,18 @@
 
-/* Custom styles for the minimalist dark theme and typewriter effect */
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #0a0a0a; /* A very dark, near-black background */
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    background-color: #0a0a0a;
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
 }
 
 #intro-text {
     text-align: center;
 }
 
-/* The typewriter cursor effect */
+
 .typing::after {
     content: '_';
     animation: blink 1s step-end infinite;
@@ -23,11 +23,11 @@ body {
         color: transparent;
     }
     50% {
-        color: #e5e7eb; /* A light gray for the cursor */
+        color: #e5e7eb; 
     }
 }
 
-/* Fade-in animation for elements that appear after typing */
+
 .fade-in {
     opacity: 0;
     transition: opacity 1s ease-in-out;
